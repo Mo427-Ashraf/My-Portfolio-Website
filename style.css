@@ -940,3 +940,44 @@ section {
     font-size: 1.2rem;
   }
 }
+
+/* ===== MOBILE NAVIGATION ANIMATION ===== */
+.navbar {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.95);
+  border-left: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 2rem 3rem;
+  gap: 1.5rem;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease-in-out;
+}
+
+/* When menu is active */
+.navbar.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate each link */
+.navbar a {
+  font-size: 1.6rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Links fade in one by one when menu opens */
+.navbar.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
